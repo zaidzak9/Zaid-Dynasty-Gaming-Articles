@@ -12,12 +12,13 @@ class ArticleRepository @Inject constructor(
     private val api: ArticlesApi
 ) {
 
-    suspend fun getArticleList(page:Int): Resource<ArticleMain> {
+    suspend fun getArticleList(): Resource<ArticleMain> {
         val response = try {
-            api.getArticleList(page)
+            api.getArticleList()
         }catch (e:Exception){
             return Resource.Error("An unknown error occurred")
         }
+        println("dynasty repo$response")
         return Resource.Success(response)
     }
 

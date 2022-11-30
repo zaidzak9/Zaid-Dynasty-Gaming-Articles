@@ -31,9 +31,8 @@ class ArticleListEntryViewModel @Inject constructor(
     val articleFlow: StateFlow<Events> = _articleFlow
 
     private fun loadArticleList() {
-        _articleFlow.value = Events.Loading
         viewModelScope.launch {
-            when(val result = repository.getArticleList(1)) {
+            when(val result = repository.getArticleList()) {
                 is Resource.Success -> {
                     val articleResponse = result.data!!.articles
                     if (articleResponse == null) {
@@ -45,7 +44,8 @@ class ArticleListEntryViewModel @Inject constructor(
                 is Resource.Error -> {
                     _articleFlow.value = Events.Failure
                 }
-                else -> {}
+                else -> {
+                }
             }
         }
     }

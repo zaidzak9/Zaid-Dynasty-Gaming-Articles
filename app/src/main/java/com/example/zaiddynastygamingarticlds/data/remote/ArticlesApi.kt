@@ -6,8 +6,6 @@ import retrofit2.http.Query
 
 interface ArticlesApi {
 
-    @GET("articles")
-    suspend fun getArticleList(
-        @Query("page")page:Int
-    ):ArticleMain
+    @GET("articles/1")
+    suspend fun getArticleList():ArticleMain
 }
