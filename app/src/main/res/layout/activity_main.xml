@@ -6,9 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".views.MainActivity">
 
+   <ProgressBar
+       android:id="@+id/progressBar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:visibility="gone"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="@+id/articlesRecyclerView"
+       app:layout_constraintTop_toTopOf="@+id/articlesRecyclerView"
+       tools:visibility="visible" />
+
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/articlesRecyclerView"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+       android:layout_height="match_parent"
+       tools:layout_editor_absoluteX="-85dp"
+       tools:layout_editor_absoluteY="33dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

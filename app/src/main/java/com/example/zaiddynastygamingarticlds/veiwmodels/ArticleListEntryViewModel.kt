@@ -6,6 +6,7 @@ import com.example.zaiddynastygamingarticlds.data.remote.responses.Article
 import com.example.zaiddynastygamingarticlds.repository.ArticleRepository
 import com.example.zaiddynastygamingarticlds.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -31,7 +32,8 @@ class ArticleListEntryViewModel @Inject constructor(
     val articleFlow: StateFlow<Events> = _articleFlow
 
     private fun loadArticleList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
+            _articleFlow.value = Events.Loading
             when(val result = repository.getArticleList()) {
                 is Resource.Success -> {
                     val articleResponse = result.data!!.articles
