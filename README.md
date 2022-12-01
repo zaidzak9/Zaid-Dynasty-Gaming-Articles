@@ -12,5 +12,5 @@ Things done in this project
 ex: https://github.com/zaidzak9/Zaid-Dynasty-Gaming-Articles/pull/1
 
 Concerns
-1. API not suitable for pagination. static api with routes 1,2,3
+1. API not suitable for pagination. static api with routes 1,2,3, for pagination need to pass as query and have off set. 
 2. Cannot do extra detail page bcoz no api info, unless hardcode everthing
