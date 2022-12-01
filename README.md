@@ -7,10 +7,9 @@ Things done in this project
 4. Couroutines
 5. State Flows for reactive programming
 6. Trunk Based git system
-7. Created PRs to simulate real world programming 
+7. Dependency Injection using dagger-HILT
+8. Created PRs to simulate real world programming 
 ex: https://github.com/zaidzak9/Zaid-Dynasty-Gaming-Articles/pull/1
-
-8.Dependency Injection using dagger-HILT
 
 Concerns
 1. API not suitable for pagination. static api with routes 1,2,3
